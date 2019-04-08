@@ -1,0 +1,11 @@
+* {
+  outline: 1px solid blue !important;
+}
+
+* {
+  margin: 10px !important;
+}
+
+Nav {
+  background: rgb(237, 199, 199);
+}
