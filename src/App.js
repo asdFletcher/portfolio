@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles/reset.css';
 import './styles/base.css';
 import Nav from "./components/Nav.js"
+import TreeGraphContainer from './TreeGraph/TreeGraphContainer.js';
 
 class App extends Component {
   render() {
@@ -12,9 +13,10 @@ class App extends Component {
           <Nav />
         </header>
 
-        <body>
-          <div>body content</div>
-        </body>
+        <main>
+          <div>main content</div>
+          <TreeGraphContainer />
+        </main>
 
         <footer className="App-footer">
           <div>footer content</div>
