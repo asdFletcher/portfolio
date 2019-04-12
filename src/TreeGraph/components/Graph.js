@@ -11,21 +11,42 @@ const mapStateToProps = (state) => {
 
 class Graph extends React.Component {
 
+  state = {
+    heigth: 800,
+    width: 800,
+  };
+
   CIRCLE_RADIUS = 20;
   EDGE_THICKNESS = 3;
   NOMINAL_VERTICAL_SEPARATION = 75;
   margin = {top: 0, right: 0, bottom: 0, left: 0};
-  width = 960 - this.margin.right - this.margin.left;
-  height = 750 - this.margin.top - this.margin.bottom;
   diagonal = null;
   svg = null;
   tree = null;
   root = null;
   i = 0;
 
+
+  updateDimensions() {
+    let element =  document.getElementsByClassName('graph')[0];
+    let height = element.clientHeight;
+    let width = element.clientWidth;
+    this.setState({width});
+    this.setState({height});
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions.bind(this));
+    this.updateDimensions();
+  }
+
+  componentWillUnmount() {
+      window.removeEventListener("resize", this.updateDimensions.bind(this));
+  }
+
   updateGraph = () => {
     this.removeExistingGraph();
-
+    
     this.defineRoot();
     this.defineTree();
     this.defineDiagonal();
@@ -52,10 +73,9 @@ class Graph extends React.Component {
     const { data } = this.props;
     this.root = d3.hierarchy(data);
   }
-
+  
   defineTree = () => {
-    this.tree = d3.tree()
-      .size([this.height, this.width]);
+    this.tree = d3.tree().size([this.state.width, this.state.height]);
 
     this.tree = this.tree(this.root);
   }
@@ -68,11 +88,10 @@ class Graph extends React.Component {
 
   defineSVG = () => {
     this.svg = d3.select(".graph").append("svg")
-      .attr("width", this.width + this.margin.right + this.margin.left)
-      .attr("height", this.height + this.margin.top + this.margin.bottom)
+      .attr("width", this.state.width + this.margin.right + this.margin.left)
+      .attr("height", this.state.height + this.margin.top + this.margin.bottom)
       .append("g")
-      .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
-
+      .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")")
   }
 
   setVerticalSpacing = () => {
@@ -84,7 +103,7 @@ class Graph extends React.Component {
 
     let circleHeight = (this.CIRCLE_RADIUS + this.EDGE_THICKNESS) * 2;
 
-    if (this.tree.height * this.NOMINAL_VERTICAL_SEPARATION + circleHeight /2 > this.height){
+    if (this.tree.height * this.NOMINAL_VERTICAL_SEPARATION + circleHeight /2 > this.state.height){
       let circleHeight = (this.CIRCLE_RADIUS + this.EDGE_THICKNESS) * 3;
       let offsetPerLevel = (circleHeight + this.margin.top) / this.tree.height;
       centerToCenter = this.NOMINAL_VERTICAL_SEPARATION - offsetPerLevel;
@@ -114,13 +133,12 @@ class Graph extends React.Component {
     const { displayNumbers } = this.props;
   
     let nodeEnter = this.node.enter().append("g")
-    .attr("class", getNodeClass)
-    .attr("transform", d => { 
-      return "translate(" + d.x + "," + d.y + ")"; })
+      .attr("class", getNodeClass)
+      .attr("transform", d => "translate(" + d.x + "," + d.y + ")");
   
     nodeEnter.append("circle")
       .attr("r", this.CIRCLE_RADIUS)
-      .style('fill', function(d) {return d.color});
+      .style('fill', d => d.color);
   
     nodeEnter.append("text")
       .attr("dy", ".35em")
