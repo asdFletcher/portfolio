@@ -120,7 +120,7 @@ class Graph extends React.Component {
   
     nodeEnter.append("circle")
       .attr("r", this.CIRCLE_RADIUS)
-      .style("fill", "#fff")
+      .style('fill', function(d) {return d.color});
   
     nodeEnter.append("text")
       .attr("dy", ".35em")
@@ -130,16 +130,14 @@ class Graph extends React.Component {
           return d.data.value
         }
       })
-      .style("fill-opacity", 1);
     
     nodeEnter.append("text")
+      .attr("class", "height-text")
       .attr("dy", ".35em")
       .attr("x", d => 25 )
       .text( d => {
         return d.data.height;
-      })
-      .style("fill-opacity", 1)
-      .style("fill", "darkOrange");
+      });
 
   }
   

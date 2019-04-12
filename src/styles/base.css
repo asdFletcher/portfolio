@@ -13,12 +13,18 @@
 .graph {
 }
 
-g text:nth-of-type(2){
+.node .height-text{
   font-size: 20px;
+  fill: darkorange;
+
 }
 
 main {
   width: 100%;
   max-width: 1280px;
-  /* outline: 1px solid black; */
+}
+
+g.node:hover {
+  cursor: pointer;
+  outline: 1px solid red;
 }
