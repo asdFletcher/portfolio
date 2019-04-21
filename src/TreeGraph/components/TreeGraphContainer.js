@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import '../styles/reset.scss';
 import '../styles/treegraph.scss';
 
 import Controller from "./Controller.js";

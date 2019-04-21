@@ -7,25 +7,25 @@ import Nav from "./components/Nav.js"
 import Resume from './components/Resume.js';
 import TreeGraphContainer from './TreeGraph/components/TreeGraphContainer.js';
 import Blog from './components/Blog.js';
-import Footer from './components/Footer.js';
+import Header from './components/Header.js';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <aside className="left-aside">
+          <div className="top-left"></div>
           <Nav />
-        </header>
+        </aside>
 
-        <main>
-          <Route exact path="/resume" component={Resume} />
-          <Route exact path="/trees" component={TreeGraphContainer} />
-          <Route exact path="/blog" component={Blog} />
-        </main>
-
-        <footer className="App-footer">
-          <Footer />
-        </footer>
+        <aside className="right-aside">
+          <Header />
+          <main>
+            <Route exact path="/resume" component={Resume} />
+            <Route exact path="/trees" component={TreeGraphContainer} />
+            <Route exact path="/blog" component={Blog} />
+          </main>
+        </aside>
       </div>
     );
   }
