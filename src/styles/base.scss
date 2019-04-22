@@ -4,6 +4,7 @@
   // outline: 1px solid blue !important;
   font-family: Helvetica, sans-serif !important;
   color: rgb(23, 23, 23);
+  box-sizing: border-box;
   
 }
 
@@ -33,7 +34,6 @@ header {
   height: $headerHeight;
   width: 100%;
   border-bottom: 2px solid grey;
-  // box-sizing: border-box;
 }
 
 .top-left {
@@ -44,11 +44,10 @@ header {
 
 .left-aside {
   border-right: 2px solid grey;
-  
+
   nav {
     box-sizing: border-box;
     display: flex;
-    width: $navWidth;
     min-width: $navWidthMin;
     max-width: $navWidthMax;
 
@@ -69,8 +68,26 @@ header {
       width: 100%;
       height: $navItemHeight;
       box-sizing: border-box;
-      border-bottom: none;
+    }
+    .list-tier-1 > li > a{
       border-bottom: 2px solid grey;
+    }
+
+    .list-tier-2 {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        border-bottom: 2px solid grey;
+      }
+      a {
+        border-left: 2px solid grey;
+        height: $navItemTierTwoHeight;
+        width: 75%;
+      }
     }
   }
 }
@@ -81,14 +98,28 @@ main {
   overflow-y: auto;
 }
 
-.blog-container {
+// .home-conatiner a {
+//   target="_blank";
+// }
+
+.blog-container , .home-container, .resume-container {
   margin-left: 20px;
   padding-top: 15px;
-  width: 100%;
+  width: calc(100% - 45px);
   max-width: 960px;
   box-sizing: border-box;
+  line-height: 140%;
   
+  h1 {
+    font-size: 1.75em;
+  }
   h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: green;
+  }
+  h3 {
+    font-size: 1.25em;
     margin-bottom: 10px;
     color: green;
   }
@@ -96,7 +127,12 @@ main {
   p {
     margin: 10px 0px 10px 0px;
   }
-
+  li {
+    display: list-item;
+    list-style-type: square;
+    list-style-position: inside;
+    margin: 2px;
+  }
   div {
     box-sizing: border-box;
     width: 100%;
@@ -106,7 +142,6 @@ main {
     min-width: 0;
     width: 100%;
     margin: 5px 0px 5px 0px;
-    // margin: 15px;
     outline: 1px solid black;
     // max-width: 600px;
   }
