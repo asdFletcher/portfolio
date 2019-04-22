@@ -39,19 +39,19 @@ export const BlogBST = () => {
         <Markdown>{md}</Markdown>
         <LazyLoad>
           <>
-            <img src={ require('../assets/slides/bst/bst.001.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.002.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.003.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.004.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.005.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.006.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.007.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.008.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.009.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.010.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.011.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.012.jpeg')}></img>
-            <img src={ require('../assets/slides/bst/bst.013.jpeg')}></img>
+            <img src={ require('../assets/slides/bst/bst.001.jpeg') } alt="001"></img>
+            <img src={ require('../assets/slides/bst/bst.002.jpeg') } alt="002"></img>
+            <img src={ require('../assets/slides/bst/bst.003.jpeg') } alt="003"></img>
+            <img src={ require('../assets/slides/bst/bst.004.jpeg') } alt="004"></img>
+            <img src={ require('../assets/slides/bst/bst.005.jpeg') } alt="005"></img>
+            <img src={ require('../assets/slides/bst/bst.006.jpeg') } alt="006"></img>
+            <img src={ require('../assets/slides/bst/bst.007.jpeg') } alt="007"></img>
+            <img src={ require('../assets/slides/bst/bst.008.jpeg') } alt="008"></img>
+            <img src={ require('../assets/slides/bst/bst.009.jpeg') } alt="009"></img>
+            <img src={ require('../assets/slides/bst/bst.010.jpeg') } alt="010"></img>
+            <img src={ require('../assets/slides/bst/bst.011.jpeg') } alt="011"></img>
+            <img src={ require('../assets/slides/bst/bst.012.jpeg') } alt="012"></img>
+            <img src={ require('../assets/slides/bst/bst.013.jpeg') } alt="013"></img>
           </>
         </LazyLoad>
       </div>
@@ -97,19 +97,19 @@ export const BlogAVL = () => {
         <Markdown>{md}</Markdown>
         <LazyLoad>
           <>
-            <img src={ require('../assets/slides/avl/avl.001.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.002.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.003.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.004.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.005.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.006.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.007.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.008.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.009.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.010.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.011.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.012.jpeg')}></img>
-            <img src={ require('../assets/slides/avl/avl.013.jpeg')}></img>
+            <img src={ require('../assets/slides/avl/avl.001.jpeg')} alt="001"></img>
+            <img src={ require('../assets/slides/avl/avl.002.jpeg')} alt="002"></img>
+            <img src={ require('../assets/slides/avl/avl.003.jpeg')} alt="003"></img>
+            <img src={ require('../assets/slides/avl/avl.004.jpeg')} alt="004"></img>
+            <img src={ require('../assets/slides/avl/avl.005.jpeg')} alt="005"></img>
+            <img src={ require('../assets/slides/avl/avl.006.jpeg')} alt="006"></img>
+            <img src={ require('../assets/slides/avl/avl.007.jpeg')} alt="007"></img>
+            <img src={ require('../assets/slides/avl/avl.008.jpeg')} alt="008"></img>
+            <img src={ require('../assets/slides/avl/avl.009.jpeg')} alt="009"></img>
+            <img src={ require('../assets/slides/avl/avl.010.jpeg')} alt="010"></img>
+            <img src={ require('../assets/slides/avl/avl.011.jpeg')} alt="011"></img>
+            <img src={ require('../assets/slides/avl/avl.012.jpeg')} alt="012"></img>
+            <img src={ require('../assets/slides/avl/avl.013.jpeg')} alt="013"></img>
           </>
         </LazyLoad>
       </div>
@@ -132,10 +132,10 @@ export const BlogTreeCompare = () => {
         <Markdown>{md}</Markdown>
         <LazyLoad>
           <>
-            <img src={ require('../assets/slides/compare/comparisons.001.jpeg')}></img>
-            <img src={ require('../assets/slides/compare/comparisons.002.jpeg')}></img>
-            <img src={ require('../assets/slides/compare/comparisons.003.jpeg')}></img>
-            <img src={ require('../assets/slides/compare/comparisons.004.jpeg')}></img>
+            <img src={ require('../assets/slides/compare/comparisons.001.jpeg')} alt="001"></img>
+            <img src={ require('../assets/slides/compare/comparisons.002.jpeg')} alt="002"></img>
+            <img src={ require('../assets/slides/compare/comparisons.003.jpeg')} alt="003"></img>
+            <img src={ require('../assets/slides/compare/comparisons.004.jpeg')} alt="004"></img>
           </>
         </LazyLoad>
       </div>
