@@ -2,9 +2,6 @@ import React from 'react';
 import LazyLoad from 'react-lazy-load';
 import Markdown from 'markdown-to-jsx';
 
-
-
-
 export const BlogBST = () => {
   const md = 
   `
@@ -113,6 +110,32 @@ export const BlogAVL = () => {
             <img src={ require('../assets/slides/avl/avl.011.jpeg')}></img>
             <img src={ require('../assets/slides/avl/avl.012.jpeg')}></img>
             <img src={ require('../assets/slides/avl/avl.013.jpeg')}></img>
+          </>
+        </LazyLoad>
+      </div>
+    </>
+  );
+}
+
+export const BlogTreeCompare = () => {
+  const md =
+  `
+  ## Comparison between:
+  - AVL Tree
+  - Binary Search Tree
+
+  
+  `
+  return (
+    <>
+      <div className="blog-container">
+        <Markdown>{md}</Markdown>
+        <LazyLoad>
+          <>
+            <img src={ require('../assets/slides/compare/comparisons.001.jpeg')}></img>
+            <img src={ require('../assets/slides/compare/comparisons.002.jpeg')}></img>
+            <img src={ require('../assets/slides/compare/comparisons.003.jpeg')}></img>
+            <img src={ require('../assets/slides/compare/comparisons.004.jpeg')}></img>
           </>
         </LazyLoad>
       </div>

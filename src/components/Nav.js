@@ -18,6 +18,9 @@ class Nav extends React.Component{
               <li>
                 <Link to="/blog-avl">AVL Tree</Link>
               </li>
+              <li>
+                <Link to="/blog-tree-compare">Comparison</Link>
+              </li>
             </ul>
           </li>
           <li>
