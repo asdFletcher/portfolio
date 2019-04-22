@@ -5,12 +5,20 @@ class Nav extends React.Component{
   render() {
     return (
       <nav>
-        <ul>
+        <ul className="list-tier-1">
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog-bst">Blog</Link>
+            <ul className="list-tier-2">
+              <li>
+                <Link to="/blog-bst">BST</Link>
+              </li>
+              <li>
+                <Link to="/blog-avl">AVL Tree</Link>
+              </li>
+            </ul>
           </li>
           <li>
             <Link to="/resume">Resume</Link>

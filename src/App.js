@@ -6,7 +6,7 @@ import { Route } from "react-router-dom";
 import Nav from "./components/Nav.js"
 import Resume from './components/Resume.js';
 import TreeGraphContainer from './TreeGraph/components/TreeGraphContainer.js';
-import Blog from './components/Blog.js';
+import { BlogBST, BlogAVL } from './components/Blog.js';
 import Header from './components/Header.js';
 
 class App extends Component {
@@ -23,7 +23,8 @@ class App extends Component {
           <main>
             <Route exact path="/resume" component={Resume} />
             <Route exact path="/trees" component={TreeGraphContainer} />
-            <Route exact path="/blog" component={Blog} />
+            <Route exact path="/blog-bst" component={BlogBST} />
+            <Route exact path="/blog-avl" component={BlogAVL} />
           </main>
         </aside>
       </div>
