@@ -7,9 +7,12 @@ const md =
 #Fletcher LaRue
 About: 
 
+
+
 - [Linkedin](https://www.linkedin.com/in/fletcher-larue/)
 - [Github](https://github.com/asdFletcher)
 - [Twitter](https://twitter.com/asdFletch)
+- laruefletcher@gmail.com
 
 Full Stack JavaScript developer with a long passion for coding, problem solving, and building cool stuff!
 
