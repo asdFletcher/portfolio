@@ -13,10 +13,16 @@ class Nav extends React.Component{
             <Link to="/blog-bst">Blog</Link>
             <ul className="list-tier-2">
               <li>
+                <Link to="/blog-timing">Timing</Link>
+              </li>
+              <li>
                 <Link to="/blog-bst">BST</Link>
               </li>
               <li>
                 <Link to="/blog-avl">AVL Tree</Link>
+              </li>
+              <li>
+                <Link to="/blog-splay">Splay Tree</Link>
               </li>
               <li>
                 <Link to="/blog-tree-compare">Comparison</Link>

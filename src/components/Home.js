@@ -1,13 +1,10 @@
 import React from 'react';
-import Markdown from 'markdown-to-jsx';
-import MDLink from './MDLink';
+import ReactMarkdown from 'react-markdown';
 
 const md = 
 `
 #Fletcher LaRue
 About: 
-
-
 
 - [Linkedin](https://www.linkedin.com/in/fletcher-larue/)
 - [Github](https://github.com/asdFletcher)
@@ -23,15 +20,7 @@ My background is in Mechanical Engineering ⚙️, and I've developed a full sui
 const Home = () => {
   return (
     <div className="home-container">
-      <Markdown
-      children={md}
-      options={{
-        overrides: {
-            a: {
-                component: MDLink,
-            },
-        },
-      }} />
+      <ReactMarkdown source={md} />
     </div>
   );
 }
