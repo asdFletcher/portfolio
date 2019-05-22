@@ -25,6 +25,9 @@ class Nav extends React.Component{
                 <Link to="/blog-splay">Splay Tree</Link>
               </li>
               <li>
+                <Link to="/blog-rbt">Red Black Tree</Link>
+              </li>
+              <li>
                 <Link to="/blog-tree-compare">Comparison</Link>
               </li>
             </ul>
@@ -33,7 +36,7 @@ class Nav extends React.Component{
             <Link to="/resume">Resume</Link>
           </li>
           <li>
-            <Link to="/trees">Binary Trees</Link>
+            <Link to="/trees">Tree Playground</Link>
           </li>
         </ul>
       </nav>
