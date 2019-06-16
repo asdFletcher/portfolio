@@ -13,7 +13,7 @@ class Nav extends React.Component{
             <Link to="/blog-bst">Blog</Link>
             <ul className="list-tier-2">
               <li>
-                <Link to="/blog-timing">Timing</Link>
+                <Link to="/blog-timing-trees">Timing (Trees)</Link>
               </li>
               <li>
                 <Link to="/blog-bst">BST</Link>
@@ -29,6 +29,12 @@ class Nav extends React.Component{
               </li>
               <li>
                 <Link to="/blog-tree-compare">Comparison</Link>
+              </li>
+              <li>
+                <Link to="/blog-timing-sorting">Timing (Sorting)</Link>
+              </li>
+              <li>
+                <Link to="/blog-sorting">Sorting</Link>
               </li>
             </ul>
           </li>

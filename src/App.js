@@ -6,7 +6,7 @@ import { Route } from "react-router-dom";
 import Nav from "./components/Nav.js"
 import Resume from './components/Resume.js';
 import TreeGraphContainer from './TreeGraph/components/TreeGraphContainer.js';
-import { BlogTiming, BlogBST, BlogAVL, BlogSplay, BlogTreeCompare, BlogRBT } from './components/Blog.js';
+import { BlogTimingTrees, BlogBST, BlogAVL, BlogSplay, BlogTreeCompare, BlogRBT, BlogTimingSorting, Sorting } from './components/Blog.js';
 import Header from './components/Header.js';
 import Home from './components/Home.js';
 
@@ -25,12 +25,14 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/resume" component={Resume} />
             <Route exact path="/trees" component={TreeGraphContainer} />
-            <Route exact path="/blog-timing" component={BlogTiming} />
+            <Route exact path="/blog-timing-trees" component={BlogTimingTrees} />
             <Route exact path="/blog-bst" component={BlogBST} />
             <Route exact path="/blog-avl" component={BlogAVL} />
             <Route exact path="/blog-splay" component={BlogSplay} />
             <Route exact path="/blog-rbt" component={BlogRBT} />
             <Route exact path="/blog-tree-compare" component={BlogTreeCompare} />
+            <Route exact path="/blog-timing-sorting" component={BlogTimingSorting} />
+            <Route exact path="/blog-sorting" component={Sorting} />
           </main>
         </aside>
       </div>
