@@ -4,11 +4,11 @@ import ReactMarkdown from 'react-markdown';
 import Prism from 'prismjs';
 import '../styles/prism_default.css';
 
-const timingMD = `
-### Timing
-The "time" calculations are based on counters. 
+const treeTimingMD = `
+### Timing (for trees)
+The "time" calculations for trees are based on counters. 
 
-I originally attempted using the JavaScript built-in Date.now() as well as performance.now() (which has up to "microsecond" resolution) to track the actual wall-clock time that each method call required, but the results varied greatly and depended on unknown factors which were hard to control. 
+I originally attempted using the JavaScript built-in \`Date.now()\` as well as \`performance.now()\` (which has up to "microsecond" resolution) to track the actual wall-clock time that each method call required, but the results varied greatly and depended on unknown factors which were hard to control. 
 
 Ultimately, a repeatable solution was to keep track of counters placed inside each method call, and crucially inside any recursive functions or loops.
 
@@ -17,7 +17,7 @@ Insetad of attributes attached to the classes, most methods now accept callback 
 Below: An example runner for generating run "time" using a counter.
 `
 
-export class BlogTiming extends React.Component {
+export class BlogTimingTrees extends React.Component {
   constructor(props) {
     super(props);
     this.code = `function singleRunInsert(sampleRate) {
@@ -53,7 +53,7 @@ export class BlogTiming extends React.Component {
       <>
         <div className="blog-container">
           <ReactMarkdown
-            source={timingMD}
+            source={treeTimingMD}
             />
           <pre>
             <code className="language-javascript">
@@ -81,19 +81,20 @@ export const BlogBST = () => {
   - Print
 
 
-  The methods Insert, remove, contains, find max, and find min should all be O(log(n)) time complexity, on average. With a worst case of O(n). Print is a traversal and hits each node once so is O(n) in all cases. Space complexity is not analyzed here but should be O(n). Learn more about Binary Search Trees: [Binary search tree on Wikipedia](https://en.wikipedia.org/wiki/Binary_search_tree)
-  
-  ### Code
-  The BST class code is located on Github [BST class code](https://github.com/asdFletcher/data-structures-and-algorithms/tree/master/src/data-structures/binary-search-tree). I would caution against using this BST implementation in any real project since this isn't fully vetted. There are some potentially useful tests located here: [BST tests](https://github.com/asdFletcher/data-structures-and-algorithms/blob/master/src/data-structures/binary-search-tree/__tests__/binary-search-tree.test.js).
+  <p>The methods Insert, remove, contains, find max, and find min should all be O(log(n)) time complexity, on average. With a worst case of O(n). Print is a traversal and hits each node once so is O(n) in all cases. Space complexity is not analyzed here but should be O(n). Learn more about Binary Search Trees: <a href="https://en.wikipedia.org/wiki/Binary_search_tree" target="_blank">Binary search tree on Wikipedia</a></p>
 
-  The binary tree plotter used to create the tree visuals is on Github [Tree plotter](https://github.com/asdFletcher/binary-tree-plotter)
+  <h3>Code</h3>
+  <p>
+  The BST class code is located on Github  <a href="https://github.com/asdFletcher/data-structures-and-algorithms/tree/master/src/data-structures/binary-search-tree" target="_blank">BST class code</a>. I would caution against using this BST implementation in any real project since this isn't fully vetted. There are some potentially useful tests located here: <a href="https://github.com/asdFletcher/data-structures-and-algorithms/blob/master/src/data-structures/binary-search-tree/__tests__/binary-search-tree.test.js" target="_blank">BST tests</a>.</p>
+
+  <p>The binary tree plotter used to create the tree visuals is on Github <a href="https://github.com/asdFletcher/binary-tree-plotter" target="_blank">Tree plotter</a>.</p>
 
   The cartesian graphs themselves were plotted using Chart JS with code that simply put the data structures through their paces and output the data in a format that ChartJS can digest.
   `
   return (
     <>
       <div className="blog-container">
-        <ReactMarkdown source={md} />
+        <ReactMarkdown source={md} escapeHtml={false}/>
         <LazyLoad>
           <>
             <img src={ require('../assets/slides/bst/bst.001.jpeg') } alt="001"></img>
@@ -131,12 +132,12 @@ export const BlogAVL = () => {
   - Print
 
 
-  The methods Insert, remove, contains, find max, and find min should all be O(log(n)) time complexity, on average. With a worst case of O(log(n())! Print is a traversal and hits each node once so is O(n) in all cases. Space complexity is not analyzed here but should be O(n). Learn more about AVL Trees: [AVL Tree on Wikipedia](https://en.wikipedia.org/wiki/AVL_tree)
-  
-  ### Code
-  The AVL Tree class code is located on Github [AVL Tree class code](https://github.com/asdFletcher/data-structures-and-algorithms/tree/master/src/data-structures/avl-tree). I would caution against using this implementation in any real project since this isn't fully vetted. There are some potentially useful tests located here: [AVL Tree tests](https://github.com/asdFletcher/data-structures-and-algorithms/blob/master/src/data-structures/avl-tree/__tests__/avl-tree.test.js).
+  <p>The methods Insert, remove, contains, find max, and find min should all be O(log(n)) time complexity, on average. With a worst case of O(log(n())! Print is a traversal and hits each node once so is O(n) in all cases. Space complexity is not analyzed here but should be O(n). Learn more about AVL Trees: <a href="https://en.wikipedia.org/wiki/AVL_tree" target="_blank">AVL Tree on Wikipedia</a></p>
 
-  The binary tree plotter used to create the tree visuals is on Github [Tree plotter](https://github.com/asdFletcher/binary-tree-plotter)
+  <h3>Code</h3>
+  <p>The AVL Tree class code is located on Github <a href="https://github.com/asdFletcher/data-structures-and-algorithms/tree/master/src/data-structures/avl-tree" target="_blank">AVL Tree class code</a>. I would caution against using this implementation in any real project since this isn't fully vetted. There are some potentially useful tests located here: <a href="https://github.com/asdFletcher/data-structures-and-algorithms/blob/master/src/data-structures/avl-tree/__tests__/avl-tree.test.js" target="_blank">AVL Tree tests</a>.</p>
+
+  <p>The binary tree plotter used to create the tree visuals is on Github <a href="https://github.com/asdFletcher/binary-tree-plotter" target="_blank">Tree plotter</a></p>
 
   The cartesian graphs themselves were plotted using Chart JS with code that simply put the data structures through their paces and output the data in a format that ChartJS can digest.
   `
@@ -144,7 +145,7 @@ export const BlogAVL = () => {
   return (
     <>
       <div className="blog-container">
-      <ReactMarkdown source={md} />
+      <ReactMarkdown source={md} escapeHtml={false}/>
         <LazyLoad>
           <>
             <img src={ require('../assets/slides/avl/avl.001.jpeg')} alt="001"></img>
@@ -175,7 +176,10 @@ export const BlogTreeCompare = () => {
   * AVL Tree 
   * Binary Search Tree 
   * Splay Tree
-  * 
+
+
+
+
   `
   return (
     <>
@@ -210,12 +214,13 @@ export const BlogSplay = () => {
   - Print
 
 
-  The methods insert, remove, contains, find max, and find min should all be O(log(n)) time complexity, on average. With a worst case of O(n). Print is a traversal and hits each node once so is O(n) in all cases. Space complexity is not analyzed here but should be O(n). Learn more about Splay Trees: [Splay Tree on Wikipedia](https://en.wikipedia.org/wiki/Splay_tree)
   
-  ### Code
-  The Splay Tree class code is located on Github [Splay Tree class code](https://github.com/asdFletcher/data-structures-and-algorithms/tree/master/src/data-structures/splay-tree). I would caution against using this implementation in any real project since this isn't fully vetted. There are some potentially useful tests if you're building your own tree class located here: [Splay Tree tests](https://github.com/asdFletcher/data-structures-and-algorithms/blob/master/src/data-structures/splay-tree/__tests__/splay-tree.test.js).
+  <p>The methods insert, remove, contains, find max, and find min should all be O(log(n)) time complexity, on average. With a worst case of O(n). Print is a traversal and hits each node once so is O(n) in all cases. Space complexity is not analyzed here but should be O(n). Learn more about Splay Trees: <a href="https://en.wikipedia.org/wiki/Splay_tree" target="_blank">Splay Tree on Wikipedia</a></p>
 
-  The binary tree plotter used to create the tree visuals is on Github [Tree plotter](https://github.com/asdFletcher/binary-tree-plotter)
+  <h3>Code</h3>
+  <p>The Splay Tree class code is located on Github <a href="https://github.com/asdFletcher/data-structures-and-algorithms/tree/master/src/data-structures/splay-tree" target="_blank">Splay Tree class code</a>. I would caution against using this implementation in any real project since this isn't fully vetted. There are some potentially useful tests if you're building your own tree class located here: <a href="https://github.com/asdFletcher/data-structures-and-algorithms/blob/master/src/data-structures/splay-tree/__tests__/splay-tree.test.js" target="_blank">Splay Tree tests</a>.</p>
+
+  <p>The binary tree plotter used to create the tree visuals is on Github <a href="https://github.com/asdFletcher/binary-tree-plotter" target="_blank">Tree plotter</a></p>
 
   The cartesian graphs themselves were plotted using Chart JS with code that simply put the data structures through their paces and output the data in a format that ChartJS can digest.
   `
@@ -223,7 +228,7 @@ export const BlogSplay = () => {
   return (
     <>
       <div className="blog-container">
-      <ReactMarkdown source={md} />
+      <ReactMarkdown source={md} escapeHtml={false}/>
         <LazyLoad>
           <>
             <img src={ require('../assets/slides/splay/splay.001.jpeg')} alt="001"></img>
@@ -255,12 +260,13 @@ export const BlogRBT = () => {
   - Print
 
 
-  The methods insert, remove, contains, find max, and find min should all be O(log(n)) time complexity, on average. With a worst case of O(log(n)). Print is a traversal and hits each node once so is O(n) in all cases. Space complexity is not analyzed here but should be O(n). Learn more about Red Black Trees: [Red Black Tree on Wikipedia](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
-  
-  ### Code
-  The Red Black Tree class code is located on Github [Red Black Tree class code](https://github.com/asdFletcher/data-structures-and-algorithms/tree/master/src/data-structures/red-black-tree). I would caution against using this implementation in any real project since this isn't fully vetted. There are however some potentially useful tests if you're building your own tree class located here: [Red Black Tree tests](https://github.com/asdFletcher/data-structures-and-algorithms/blob/master/src/data-structures/red-black-tree/__tests__/red-black-tree.test.js).
 
-  The binary tree plotter used to create the tree visuals is on Github [Tree plotter](https://github.com/asdFletcher/binary-tree-plotter)
+  <p>The methods insert, remove, contains, find max, and find min should all be O(log(n)) time complexity, on average. With a worst case of O(log(n)). Print is a traversal and hits each node once so is O(n) in all cases. Space complexity is not analyzed here but should be O(n). Learn more about Red Black Trees: <a href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree" target="_blank">Red Black Tree on Wikipedia</a></p>
+  
+  <h3>Code</h3>
+  <p>The Red Black Tree class code is located on Github <a href="https://github.com/asdFletcher/data-structures-and-algorithms/tree/master/src/data-structures/red-black-tree" target="_blank">Red Black Tree class code</a>. I would caution against using this implementation in any real project since this isn't fully vetted. There are however some potentially useful tests if you're building your own tree class located here: <a href="https://github.com/asdFletcher/data-structures-and-algorithms/blob/master/src/data-structures/red-black-tree/__tests__/red-black-tree.test.js" target="_blank">Red Black Tree tests</a>.</p>
+
+  <p>The binary tree plotter used to create the tree visuals is on Github <a href="https://github.com/asdFletcher/binary-tree-plotter" target="_blank">Tree plotter</a></p>
 
   The cartesian graphs themselves were plotted using Chart JS with code that simply put the data structures through their paces and output the data in a format that ChartJS can digest.
   `
@@ -268,7 +274,7 @@ export const BlogRBT = () => {
   return (
     <>
       <div className="blog-container">
-      <ReactMarkdown source={md} />
+      <ReactMarkdown source={md} escapeHtml={false}/>
         <LazyLoad>
           <>
             <img src={ require('../assets/slides/rbt/rbt.001.jpeg')} alt="001"></img>
@@ -283,6 +289,118 @@ export const BlogRBT = () => {
             <img src={ require('../assets/slides/rbt/rbt.010.jpeg')} alt="010"></img>
             <img src={ require('../assets/slides/rbt/rbt.011.jpeg')} alt="011"></img>
             <img src={ require('../assets/slides/rbt/rbt.012.jpeg')} alt="012"></img>
+          </>
+        </LazyLoad>
+      </div>
+    </>
+  );
+}
+
+
+const sortingTimingMD = `
+### Timing (for sorting)
+
+The time measurements for sorting uses java's \`System.nanoTime()\`
+
+<p>From the Java <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#nanoTime()" target="_blank">docs</a>:</p>
+
+\`Returns the current value of the running Java Virtual Machine's high-resolution time source, in nanoseconds.
+This method can only be used to measure elapsed time and is not related to any other notion of system or wall-clock time. The value returned represents nanoseconds since some fixed but arbitrary origin time (perhaps in the future, so values may be negative). The same origin is used by all invocations of this method in an instance of a Java virtual machine; other virtual machine instances are likely to use a different origin.
+
+This method provides nanosecond precision, but not necessarily nanosecond resolution (that is, how frequently the value changes) - no guarantees are made except that the resolution is at least as good as that of currentTimeMillis().\`
+
+The sorting code was done in Java primarily for the fact that we are able to get this precise measurment of time. Compared to JavaScript which offers much less predictable \`Date.now()\` and \`performance.now()\`.
+
+Below: Example code for sorting
+`
+
+export class BlogTimingSorting extends React.Component {
+  constructor(props) {
+    super(props);
+    this.code = `public static long[] generateAndSortNumbers(int n, int runCount) {
+      long[] times = new long[runCount];
+    
+      for (int i = 0; i < runCount; i++) {
+        // generate numbers
+        Integer[] nums =  getRandomNumberList(n);
+    
+        // begin timer
+        long start = System.nanoTime(); 
+
+        // sort
+        QuickSort.sort(nums);
+
+        // end timer
+        long end = System.nanoTime();
+        
+        long elapsed = end-start;
+        times[i] = elapsed;
+      }
+      return times;
+    }`
+  }
+
+  componentDidMount() {
+    Prism.highlightAll();
+  }
+
+  render() {
+    return (
+      <>
+        <div className="blog-container">
+          <ReactMarkdown source={sortingTimingMD} escapeHtml={false}/>
+          <pre>
+            <code className="language-javascript">
+              {this.code}
+            </code>
+          </pre>
+        </div>
+      </>
+    );
+  }
+}
+
+export const Sorting = () => {
+  const md = 
+  `
+  ## Sorting algorithms
+
+  This page is part of the attempt to verify the run time complexities of various sorting methods including:
+
+  - Insertion sort
+  - Selection sort
+  - Merge sort
+  - Quick sort
+
+
+  <p></p>
+  <h3>Code</h3>
+  <p>The code for all the sorting algorithms (implemented in Java) is located on Github <a href="https://github.com/asdFletcher/java-sorting" target="_blank">Github repo</a>. Also included in the repo is the test suite used to generate the timing data which may  be useful to anyone wishing to test their own sorting algorithms.
+
+  The graphs were plotted using Apple's Numbers and annotated and exported as images using Keynote.
+  `
+
+  return (
+    <>
+      <div className="blog-container">
+      <ReactMarkdown source={md} escapeHtml={false}/>
+        <LazyLoad>
+          <>
+            <img src={ require('../assets/slides/sorting/sorting images.001.jpeg')} alt="001"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.002.jpeg')} alt="002"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.003.jpeg')} alt="003"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.004.jpeg')} alt="004"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.005.jpeg')} alt="005"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.006.jpeg')} alt="006"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.007.jpeg')} alt="007"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.008.jpeg')} alt="008"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.009.jpeg')} alt="009"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.010.jpeg')} alt="010"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.011.jpeg')} alt="011"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.012.jpeg')} alt="012"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.013.jpeg')} alt="013"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.014.jpeg')} alt="014"></img>
+            <img src={ require('../assets/slides/sorting/sorting images.015.jpeg')} alt="015"></img>
           </>
         </LazyLoad>
       </div>
