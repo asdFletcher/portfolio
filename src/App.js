@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles/reset.scss';
-import './styles/base.scss';
+import './styles/styles.scss';
 import { Route } from "react-router-dom";
 
 import Nav from "./components/Nav.js"

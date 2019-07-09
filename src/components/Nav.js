@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 
 class Nav extends React.Component{
   render() {
@@ -7,42 +7,51 @@ class Nav extends React.Component{
       <nav>
         <ul className="list-tier-1">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink exact={true} to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/blog-bst">Blog</Link>
+            <NavLink exact={true} to="/blog-bst">Blog</NavLink>
             <ul className="list-tier-2">
               <li>
-                <Link to="/blog-timing-trees">Timing (Trees)</Link>
+                <NavLink exact={true} to="/blog-timing-trees">Timing (Trees)</NavLink>
               </li>
               <li>
-                <Link to="/blog-bst">BST</Link>
+                <NavLink exact={true} to="/blog-bst">BST</NavLink>
               </li>
               <li>
-                <Link to="/blog-avl">AVL Tree</Link>
+                <NavLink exact={true} to="/blog-avl">AVL Tree</NavLink>
               </li>
               <li>
-                <Link to="/blog-splay">Splay Tree</Link>
+                <NavLink exact={true} to="/blog-splay">Splay Tree</NavLink>
               </li>
               <li>
-                <Link to="/blog-rbt">Red Black Tree</Link>
+                <NavLink exact={true} to="/blog-rbt">Red Black Tree</NavLink>
               </li>
               <li>
-                <Link to="/blog-tree-compare">Comparison</Link>
+                <NavLink exact={true} to="/blog-tree-compare">Comparison</NavLink>
               </li>
               <li>
-                <Link to="/blog-timing-sorting">Timing (Sorting)</Link>
+                <NavLink exact={true} to="/blog-timing-sorting">Timing (Sorting)</NavLink>
               </li>
               <li>
-                <Link to="/blog-sorting">Sorting</Link>
+                <NavLink exact={true} to="/blog-sorting">Sorting</NavLink>
               </li>
             </ul>
           </li>
+
           <li>
-            <Link to="/resume">Resume</Link>
+            <NavLink exact={true} to="/projects">Projects</NavLink>
           </li>
+          <ul className="list-tier-2">
+            <li>
+              <NavLink to="/trees">Tree Playground</NavLink>
+            </li>
+            <li>
+              <NavLink to="/resume">Ocean Commotion</NavLink>
+            </li>
+          </ul>
           <li>
-            <Link to="/trees">Tree Playground</Link>
+            <NavLink to="/resume">Resume</NavLink>
           </li>
         </ul>
       </nav>
