@@ -1,7 +1,72 @@
-$navWidthMax: 200px;
-$navWidthMin: 150px;
+$main-font-color: rgb(40, 40, 40);
+
+@mixin main-font() {
+    font-family: Helvetica, sans-serif !important;
+    font-size: 1.01em !important;
+    color: $main-font-color;
+}
+
+@mixin un-styled-links() {
+    color: $main-font-color;
+}
+
+$navWidthMax: 300px;
+$navWidthMin: 300px;
 
 $navItemHeight: 47px;
-$headerHeight: 40px;
+$headerHeight: 0px;
 
-$navItemTierTwoHeight: 25px;
+$navItemTierTwoHeight: 35px;
+
+// neomorphism
+$neo-bg-color: #ededed;
+
+$large-border-radius: 20px;
+$medium-border-radius: 20px;
+$small-border-radius: 10px;
+
+$large-box-shadow-up: 10px 10px 15px #a6a6a6, -10px -10px 15px #ffffff;
+$large-box-shadow-down: inset 10px 10px 15px #a6a6a6, inset -10px -10px 15px #ffffff;
+
+$medium-box-shadow-up: 5px 5px 10px #828282, -5px -5px 10px #ffffff;
+$medium-box-shadow-down: inset 5px 5px 10px #828282, inset -5px -5px 10px #ffffff;
+
+$small-box-shadow-up: 5px 5px 7px #a1a1a1, -5px -5px 7px #ffffff;
+$small-box-shadow-down: inset 5px 5px 7px #a1a1a1, inset -5px -5px 7px #ffffff;
+
+@mixin neomorphism-large-up() {
+    border-radius: $large-border-radius;
+    background: $neo-bg-color;
+    box-shadow: $large-box-shadow-up;
+}
+@mixin neomorphism-large-down() {
+    border-radius: $large-border-radius;
+    background: $neo-bg-color;
+    box-shadow: $large-box-shadow-down;
+}
+@mixin neomorphism-medium-up() {
+    border-radius: $medium-border-radius;
+    background: $neo-bg-color;
+    box-shadow: $medium-box-shadow-up;
+}
+@mixin neomorphism-medium-down() {
+    border-radius: $medium-border-radius;
+    background: $neo-bg-color;
+    box-shadow: $medium-box-shadow-down;
+}
+@mixin neomorphism-small-up() {
+    border-radius: $small-border-radius;
+    background: $neo-bg-color;
+    box-shadow: $small-box-shadow-up;
+}
+@mixin neomorphism-small-down() {
+    border-radius: $small-border-radius;
+    background: $neo-bg-color;
+    box-shadow: $small-box-shadow-down;
+}
+
+// standard font size
+$standard-font-size: 1.25em;
+
+// left nav
+$top-level-spacing: 5px;
