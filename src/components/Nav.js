@@ -1,5 +1,8 @@
 import React from "react";
 import { Route, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faProjectDiagram, faPenNib } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 class Nav extends React.Component {
     render() {
@@ -8,16 +11,19 @@ class Nav extends React.Component {
                 <ul className="list-tier-1">
                     <li>
                         <NavLink className="nav-tier-1-link" exact={true} to="/">
+                            <FontAwesomeIcon className="icon" icon={faHome} />
                             Home
                         </NavLink>
                     </li>
                     <li>
                         <NavLink className="nav-tier-1-link" exact={true} to="/trees">
+                            <FontAwesomeIcon className="icon" icon={faProjectDiagram} />
                             Tree Playground
                         </NavLink>
                     </li>
                     <li>
                         <NavLink className="nav-tier-1-link" exact={true} to="/blog-bst">
+                            <FontAwesomeIcon className="icon" icon={faPenNib} />
                             Blog
                         </NavLink>
                         <ul className="list-tier-2">
@@ -81,6 +87,7 @@ class Nav extends React.Component {
                     </li>
                     <li>
                         <NavLink className="nav-tier-1-link" exact={true} to="/resume">
+                            <FontAwesomeIcon className="icon" icon={faLinkedin} />
                             Resume
                         </NavLink>
                     </li>

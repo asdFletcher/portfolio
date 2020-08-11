@@ -1,0 +1,185 @@
+@import "./variables.scss";
+
+* {
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+
+.hide {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-wrap: none;
+    flex-direction: row;
+}
+
+.graph {
+    margin: 10px 25px 10px 5px;
+    width: 100%;
+    min-width: 500px;
+    max-width: 900px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.treegraph-form button {
+    @include neomorphism-small-up();
+    width: 100%;
+    line-height: 30px;
+    border: none;
+    margin: 10px;
+
+    &.selected {
+        @include neomorphism-small-down();
+        background-color: $scroll-bar-color;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        &:not(.selected) {
+            @include neo-button-hover();
+        }
+    }
+
+    &:active {
+        transition: all 0.2s ease-in-out;
+        @include neo-button-active();
+    }
+
+    &:focus {
+        outline: none;
+        &:not(.selected) {
+            background-color: darken($neo-bg-color, 5%);
+        }
+    }
+}
+
+.form-header {
+    margin-bottom: 7px;
+}
+
+svg {
+    width: 100%;
+}
+
+.form-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.scrollzone::-webkit-scrollbar {
+    width: 14px;
+}
+
+.scrollzone::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    // box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+    margin: 50px 0px 50px 0px;
+    border-radius: 7px;
+    background-color: $scroll-bar-back-color;
+}
+
+.scrollzone::-webkit-scrollbar-thumb {
+    background-color: $scroll-bar-color;
+    border-radius: 7px;
+}
+
+.scrollzone {
+    margin-top: 20px;
+    @include neomorphism-medium-down();
+    height: 600px;
+    overflow: auto;
+    padding: 25px;
+}
+
+.treegraph-form {
+    margin: 10px 5px 10px 5px;
+    min-width: 250px;
+    max-width: 250px;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .dataOutput {
+        margin-top: 2px;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.25;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        padding: 0.25rem 0.75rem;
+    }
+
+    .form {
+        margin-right: 25px;
+    }
+    section {
+        margin: 0px 0px 20px 0px;
+        width: 100%;
+        padding: 2px;
+    }
+
+    .form-title {
+        text-align: center;
+        font-weight: 800;
+        margin-bottom: 5px;
+    }
+}
+
+.node {
+    circle {
+        fill: #fff;
+        stroke: steelblue;
+        stroke-width: 3px;
+    }
+
+    text {
+        font: 24px sans-serif;
+    }
+
+    .height-text {
+        font-size: 20px;
+        fill: darkorange;
+    }
+
+    :hover {
+        cursor: pointer;
+    }
+}
+
+.red {
+    fill: red;
+    stroke: red;
+    circle {
+        stroke: red;
+        stroke-width: 3px;
+    }
+}
+.black {
+    circle {
+        stroke: black;
+        stroke-width: 3px;
+    }
+    fill: black;
+    stroke: black;
+}

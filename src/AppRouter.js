@@ -20,6 +20,8 @@ import {
 import Header from "./components/Header.js";
 import Home from "./components/Home.js";
 
+// import { iconLibrary } from "./icons/library";
+
 export const AppRouter = () => {
     return (
         <BrowserRouter>
